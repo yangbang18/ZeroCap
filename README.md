@@ -1,3 +1,19 @@
+This repository is forked from [YoadTew/zero-shot-image-to-text](https://github.com/YoadTew/zero-shot-image-to-text) for reproduction.
+
+1. prepare the environment and data following [yangbang18/ZeroNLG](https://github.com/yangbang18/ZeroNLG).
+2. run `pip install -r requirements.txt`
+3. run the following commands for reproduction:
+```
+python infer_caption.py --dataset msrvtt --num_beams 5
+python infer_caption.py --dataset coco --num_beams 5
+``` 
+
+Our reproduced results are stored in the [output](output) folder. 
+
+
+---
+
+
 # Pytorch Implementation of [Zero-Shot Image-to-Text Generation for Visual-Semantic Arithmetic](https://arxiv.org/abs/2111.14447) [CVPR 2022]
 ### Check out our follow-up work - [Zero-Shot Video Captioning with Evolving Pseudo-Tokens](https://github.com/YoadTew/zero-shot-video-to-text)!
 [[Paper]](https://arxiv.org/abs/2111.14447) [[Notebook]](https://www.kaggle.com/yoavstau/zero-shot-image-to-text/notebook) [[Caption Demo]](https://replicate.com/yoadtew/zero-shot-image-to-text) [[Arithmetic Demo]](https://replicate.com/yoadtew/arithmetic) [[Visual Relations Dataset]](https://drive.google.com/file/d/1hf5_zPI3hfMLNMTllZtWXcjf6ZoSTGcI)

@@ -1,0 +1,16 @@
+output path: output/zeroclip/evaluations_caption/coco/en
+Creating ZeroCLIP from ./data/checkpoints/ and ./data/checkpoints/gpt2-medium/
+Load dataset from data/annotations/coco/en/test.json
+CLIP embs does not exist: None
+There are 5000 vision inputs
+Save caption results to output/zeroclip/evaluations_caption/coco/en/test_captions.json
+Save detailed scores to output/zeroclip/evaluations_caption/coco/en/test_detailed_scores.json
+Save scores to output/zeroclip/evaluations_caption/coco/en/test_scores.json
+[test] Bleu_1 0.2661050345801208
+[test] Bleu_2 0.11614626379095606
+[test] Bleu_3 0.04643529716471872
+[test] Bleu_4 0.0181900319025474
+[test] METEOR 0.09092259968485904
+[test] ROUGE_L 0.1968467539657439
+[test] CIDEr 0.144025752475812
+[test] SPICE 0.05016493619570945

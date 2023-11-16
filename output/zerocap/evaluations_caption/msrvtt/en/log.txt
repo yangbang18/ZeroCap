@@ -1,0 +1,16 @@
+output path: output/zeroclip/evaluations_caption/msrvtt/en
+Creating ZeroCLIP from ./data/checkpoints/ and ./data/checkpoints/gpt2-medium/
+Load dataset from data/annotations/msrvtt/en/test.json
+CLIP embs does not exist: None
+There are 2990 vision inputs
+Save caption results to output/zeroclip/evaluations_caption/msrvtt/en/test_captions.json
+Save detailed scores to output/zeroclip/evaluations_caption/msrvtt/en/test_detailed_scores.json
+Save scores to output/zeroclip/evaluations_caption/msrvtt/en/test_scores.json
+[test] Bleu_1 0.3851622273870705
+[test] Bleu_2 0.1665122292475737
+[test] Bleu_3 0.05926101820347664
+[test] Bleu_4 0.02274785029751012
+[test] METEOR 0.10837860440478923
+[test] ROUGE_L 0.230517141090742
+[test] CIDEr 0.0727453522481436
+[test] SPICE 0.027625944901104968

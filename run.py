@@ -9,7 +9,8 @@ def get_args():
 
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--lm_model", type=str, default="gpt-2", help="gpt-2 or gpt-neo")
-    parser.add_argument("--clip_checkpoints", type=str, default="./clip_checkpoints", help="path to CLIP")
+    parser.add_argument("--clip_checkpoints", type=str, default="/data/yb/checkpoints/", help="path to CLIP")
+    parser.add_argument("--gpt2_model", type=str, default="/data/yb/checkpoints/gpt2-medium/")
     parser.add_argument("--target_seq_length", type=int, default=15)
     parser.add_argument("--cond_text", type=str, default="Image of a")
     parser.add_argument("--reset_context_delta", action="store_true",

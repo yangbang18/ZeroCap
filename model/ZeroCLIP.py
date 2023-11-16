@@ -31,6 +31,7 @@ class CLIPTextGenerator:
                  lm_model='gpt-2',
                  forbidden_tokens_file_path='./forbidden_tokens.npy',
                  clip_checkpoints='./clip_checkpoints',
+                 gpt2_model='gpt2-medium',
                  target_seq_length=15,
                  reset_context_delta=True,
                  num_iterations=5,
@@ -59,8 +60,8 @@ class CLIPTextGenerator:
             self.lm_tokenizer = GPT2Tokenizer.from_pretrained('EleutherAI/gpt-neo-125M')
             self.lm_model = GPTNeoForCausalLM.from_pretrained('EleutherAI/gpt-neo-125M', output_hidden_states=True)
         elif lm_model == 'gpt-2':
-            self.lm_tokenizer = GPT2Tokenizer.from_pretrained('gpt2-medium')
-            self.lm_model = GPT2LMHeadModel.from_pretrained('gpt2-medium', output_hidden_states=True)
+            self.lm_tokenizer = GPT2Tokenizer.from_pretrained(gpt2_model)
+            self.lm_model = GPT2LMHeadModel.from_pretrained(gpt2_model, output_hidden_states=True)
             self.context_prefix = self.lm_tokenizer.bos_token
 
         self.lm_model.to(self.device)
@@ -95,8 +96,11 @@ class CLIPTextGenerator:
         self.ef_idx = 1
         self.forbidden_factor = forbidden_factor
 
-    def get_img_feature(self, img_path, weights):
-        imgs = [Image.open(x) for x in img_path]
+    def get_img_feature(self, img_path=None, weights=None, imgs=None):
+        if imgs is None:
+            assert img_path is not None
+            imgs = [Image.open(x) for x in img_path]
+            
         clip_imgs = [self.clip_preprocess(x).unsqueeze(0).to(self.device) for x in imgs]
 
         with torch.no_grad():
